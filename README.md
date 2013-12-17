@@ -1,4 +1,1 @@
-yadtlint
-========
-
-Lint yadt configurations and settings, including host stati
+[![Build Status](https://travis-ci.org/locolupo/yadtlint.png?branch=master)](https://travis-ci.org/locolupo/yadtlint)
