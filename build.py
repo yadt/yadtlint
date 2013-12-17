@@ -31,7 +31,7 @@ name = 'yadtlint'
 license = 'GNU GPL v3'
 summary = 'a linter yadt configuration files'
 url = 'https://github.com/locolupo/yadtlint'
-version = '0.1.1'
+version = '0.1.2'
 
 
 default_task = ['analyze', 'publish']
@@ -41,20 +41,15 @@ default_task = ['analyze', 'publish']
 def set_properties(project):
 
     project.depends_on('docopt')
-    project.depends_on('configobj')
     project.depends_on('pyyaml')
-    project.depends_on('ordereddict')
 
     project.build_depends_on('mockito')
-    project.build_depends_on('mock')
     project.build_depends_on('flake8')
 
     project.include_file('yadt_lint', 'files/yadt-target.yaml')
 
     project.set_property('copy_resources_target', '$dir_dist')
     project.get_property('filter_resources_glob').append('**/yadt_lint/__init__.py')
-
-    project.install_file('/etc/yadtlint/', 'yadt_lint/files/yadt-target.yaml')
 
 
 @init(environments="teamcity")
